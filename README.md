@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ABSENSI DIGITAL — Laravel 10 + REST API + GPS/Haversine + Flutter
 
 Project siap pakai untuk materi sampai **Pertemuan 9**.
@@ -148,3 +149,7 @@ Tambahkan izin kamera dan lokasi pada Android setelah `flutter create .`:
 - Pertemuan 9 → Mobile App Siswa + Integrasi API
 
 Project ini menggabungkan ketiganya supaya alur akhir bisa diuji dari login siswa → scan QR → GPS → validasi server → absensi tersimpan.
+=======
+# absensi-digital
+Project Laravel Absensi Digital
+>>>>>>> cebbc219b277bee598b532b5fe432073dbc85074
