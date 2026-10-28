@@ -1,0 +1,25 @@
+ABSENSI DIGITAL — PERTEMUAN 9
+
+1. Nyalakan Apache + MySQL di XAMPP.
+2. Buat database MySQL: absensi_digital
+3. Buka CMD di folder project.
+4. Jika vendor tidak ada: composer install
+5. Jalankan: php artisan migrate:fresh --seed
+6. Jalankan: php artisan serve --host=0.0.0.0
+7. Buka: http://127.0.0.1:8000/admin/login
+
+ADMIN
+Email    : admin@absensi.test
+Password : password
+
+SISWA API / MOBILE
+Email    : budi@absensi.test
+Password : password
+
+Fitur utama:
+Dashboard • Siswa • Kelas • Guru • Jadwal • Absensi • QR Code • Lokasi QR • Scan QR • Rekap • Pengaturan
+
+Alur scan:
+Login siswa → Scan QR → GPS → Laravel → Haversine → cek radius → simpan absensi → tampil di admin.
+
+Koordinat lokasi pada data demo adalah contoh. Ganti di menu Lokasi QR dengan koordinat sekolah sebenarnya sebelum pengujian GPS.

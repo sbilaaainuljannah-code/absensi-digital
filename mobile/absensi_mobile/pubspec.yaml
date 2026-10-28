@@ -1,0 +1,19 @@
+name: absensi_mobile
+description: Aplikasi mobile siswa Absensi Digital - Pertemuan 9.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  shared_preferences: ^2.3.3
+  mobile_scanner: ^6.0.2
+  geolocator: ^13.0.2
+
+flutter:
+  uses-material-design: true

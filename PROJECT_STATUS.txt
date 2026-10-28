@@ -1,0 +1,10 @@
+FINAL PROJECT STATUS
+
+Pertemuan 7: API Sanctum + QR scan endpoint + validation
+Pertemuan 8: GPS + latitude/longitude + Haversine + radius validation
+Pertemuan 9: Flutter login + token + /api/me + dashboard + profile + history + logout
+Project integration: mobile camera QR + GPS -> Laravel scan endpoint
+Admin: dashboard + students + classes + teachers + schedules + attendance + QR + locations + scan + reports + settings
+Theme: light baby-blue / white, Plus Jakarta Sans, lightweight typography
+
+Runtime note: PHP syntax and Laravel route registration were checked in the build environment. Flutter SDK was not installed in the build environment, so a real flutter run/build could not be executed here. Run CHECK_PROJECT.bat on the target Windows machine after installing Flutter/Android Studio.

@@ -1,0 +1,8 @@
+@extends('admin.layout')
+@section('content')
+<div class="page-head"><div><div class="eyebrow">Geolocation</div><h1>{{ isset($location) ? 'Edit Lokasi' : 'Tambah Lokasi' }}</h1><p>Isi koordinat dan radius lokasi absensi.</p></div><a class="btn ghost" href="{{ route('admin.locations.index') }}">← Kembali</a></div>
+<div class="card form-card"><form method="POST" action="{{ isset($location) ? route('admin.locations.update',$location->id) : route('admin.locations.store') }}">@csrf @if(isset($location)) @method('PUT') @endif
+<div class="form-grid"><div class="full"><label>Nama Lokasi</label><input name="nama_lokasi" value="{{ old('nama_lokasi',$location->nama_lokasi ?? '') }}" placeholder="Contoh: Lab RPL" required></div><div><label>Latitude</label><input name="latitude" value="{{ old('latitude',$location->latitude ?? '') }}" placeholder="-6.1234567"></div><div><label>Longitude</label><input name="longitude" value="{{ old('longitude',$location->longitude ?? '') }}" placeholder="108.1234567"></div><div><label>Radius (meter)</label><input type="number" name="radius" value="{{ old('radius',$location->radius ?? 50) }}" min="1" max="1000" required></div><div><label>Status</label><select name="status"><option value="1" @selected(old('status',$location->status ?? true))>Aktif</option><option value="0" @selected(!old('status',$location->status ?? true))>Nonaktif</option></select></div></div>
+@if($errors->any())<div class="alert error" style="margin-top:17px">{{ $errors->first() }}</div>@endif
+<div class="form-actions"><button class="btn" type="submit">{{ isset($location) ? 'Simpan Perubahan' : 'Simpan Lokasi' }}</button><a class="btn ghost" href="{{ route('admin.locations.index') }}">Batal</a></div></form></div>
+@endsection

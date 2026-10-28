@@ -1,0 +1,6 @@
+@extends('admin.layout')
+@section('content')
+<div class="page-head"><div><div class="eyebrow">System</div><h1>Pengaturan</h1><p>Informasi konfigurasi sederhana sistem absensi.</p></div></div>
+<div class="two"><div class="card"><div class="card-head"><h3>Profil Sistem</h3><span>Read only</span></div><div style="padding:22px"><div style="margin-bottom:18px"><small style="color:#6f879d">Nama aplikasi</small><div style="font-size:17px;font-weight:700;margin-top:4px">Absensi Digital</div></div><div style="margin-bottom:18px"><small style="color:#6f879d">Tahun</small><div style="font-size:17px;font-weight:700;margin-top:4px">2026</div></div><div><small style="color:#6f879d">Status sistem</small><div style="margin-top:7px"><span class="badge green">System Online</span></div></div></div></div>
+<div class="card"><div class="card-head"><h3>Menu Sistem</h3><span>Quick access</span></div><div class="quick"><a href="{{ route('admin.students.index') }}"><strong>Data Siswa</strong><small>Kelola siswa</small></a><a href="{{ route('admin.classes.index') }}"><strong>Data Kelas</strong><small>Kelola kelas</small></a><a href="{{ route('admin.qr.index') }}"><strong>QR Code</strong><small>Buat token QR</small></a><a href="{{ route('admin.locations.index') }}"><strong>Lokasi QR</strong><small>Kelola lokasi</small></a></div></div></div>
+@endsection

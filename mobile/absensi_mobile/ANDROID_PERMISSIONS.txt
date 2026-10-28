@@ -1,0 +1,13 @@
+Setelah menjalankan `flutter create .`, buka:
+android/app/src/main/AndroidManifest.xml
+
+Tambahkan di dalam <manifest ...> sebelum <application>:
+
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+Untuk Android 9+ dan API HTTP lokal, aplikasi development dapat membutuhkan cleartext traffic.
+Jika diperlukan, pada tag <application> tambahkan:
+android:usesCleartextTraffic="true"

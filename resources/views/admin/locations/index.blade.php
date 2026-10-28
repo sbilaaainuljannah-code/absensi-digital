@@ -1,0 +1,8 @@
+@extends('admin.layout')
+@section('content')
+<div class="page-head"><div><div class="eyebrow">Geolocation</div><h1>Lokasi QR</h1><p>Atur lokasi yang diizinkan untuk proses absensi.</p></div><a class="btn" href="{{ route('admin.locations.create') }}">＋ Tambah Lokasi</a></div>
+@if(session('success'))<div class="alert">{{ session('success') }}</div>@endif
+<div class="card"><div class="card-head"><h3>Daftar Lokasi</h3><span>{{ $locations->count() }} lokasi</span></div><div class="table-wrap"><table><thead><tr><th>No</th><th>Lokasi</th><th>Kode</th><th>Koordinat</th><th>Radius</th><th>Status</th><th>Aksi</th></tr></thead><tbody>
+@forelse($locations as $location)<tr><td>{{ $loop->iteration }}</td><td><strong>{{ $location->nama_lokasi }}</strong></td><td><span class="badge blue">{{ $location->kode_lokasi }}</span></td><td>{{ $location->latitude ?? '-' }}, {{ $location->longitude ?? '-' }}</td><td>{{ $location->radius }} m</td><td><span class="badge {{ $location->status?'green':'red' }}">{{ $location->status?'Aktif':'Nonaktif' }}</span></td><td><div class="actions"><a class="mini" href="{{ route('admin.locations.edit',$location->id) }}">Edit</a><form method="POST" action="{{ route('admin.locations.destroy',$location->id) }}" onsubmit="return confirm('Hapus lokasi ini?')">@csrf @method('DELETE')<button class="mini delete">Hapus</button></form></div></td></tr>
+@empty<tr><td colspan="7"><div class="empty"><strong>Belum ada lokasi QR</strong><span>Tambahkan lokasi untuk membuat QR.</span></div></td></tr>@endforelse</tbody></table></div></div>
+@endsection
